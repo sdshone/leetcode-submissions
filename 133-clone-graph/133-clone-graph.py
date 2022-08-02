@@ -8,27 +8,38 @@ class Node:
 
 class Solution:
     def cloneGraph(self, node1: 'Node') -> 'Node':
-        visited = defaultdict(set)
-        if not node1: return
-        def dfs(node):
+#         visited = defaultdict(set)
+#         if not node1: return
+#         def dfs(node):
             
-            new_node = Node(node.val)
-            for n in node.neighbors:
+#             new_node = Node(node.val)
+#             for n in node.neighbors:
                 
-                if n.val not in visited[node.val]:
-                    visited[node.val].add(n.val)
-                    x=dfs(n)
-                    new_node.neighbors.append(x)
-            return new_node
-        x=dfs(node1)
+#                 if n.val not in visited[node.val]:
+#                     visited[node.val].add(n.val)
+#                     x=dfs(n)
+#                     new_node.neighbors.append(x)
+#             return new_node
+#         x=dfs(node1)
 
-        nodes = {n:Node(n) for n in visited.keys()}
-        if not nodes:
-            return x
-        return_node = None
-        for k,v in visited.items():
-            for value in v:
-                nodes[k].neighbors.append(nodes[value])
-            if k == node1.val:
-                return_node = nodes[k]
-        return return_node
+#         nodes = {n:Node(n) for n in visited.keys()}
+#         if not nodes:
+#             return x
+#         return_node = None
+#         for k,v in visited.items():
+#             for value in v:
+#                 nodes[k].neighbors.append(nodes[value])
+#             if k == node1.val:
+#                 return_node = nodes[k]
+#         return return_node
+        mapping = {}
+        def clone(node):
+            if mapping.get(node):
+                return mapping.get(node)
+            new_node = Node(node.val)
+            mapping[node]=new_node
+            for n in node.neighbors:
+                new_node.neighbors.append(clone(n))
+            return new_node
+        
+        return clone(node1) if node1 else None
