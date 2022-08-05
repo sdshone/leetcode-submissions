@@ -1,6 +1,9 @@
 class Solution:
     def uniquePaths(self, m: int, n: int) -> int:
-        result = [[1]*n]*m
+        # result = [[1]*n]*m
+        result = []
+        for i in range(m):
+            result.append([1 for j in range(n)])
         
         if m==1 or n==1:
             return 1
