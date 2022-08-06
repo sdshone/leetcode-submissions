@@ -8,8 +8,7 @@ class Solution:
         for i in range(1,len(intervals)):
             l_new = len(new_intervals)
             if intervals[i][0] <= new_intervals[l_new-1][1]:
-                new_intervals[l_new-1] = \
-                [min(new_intervals[l_new-1][0], intervals[i][0]),max(new_intervals[l_new-1][1], intervals[i][1])]
+                new_intervals[-1][1] = max(new_intervals[-1][1], intervals[i][1])
                  
             else:
                  new_intervals.append(intervals[i])
