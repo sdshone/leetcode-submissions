@@ -11,19 +11,22 @@ class Solution:
         
         mod = pow(10,9)+7
         
-        dp = [[1]*5]
+        dp = [[1]*5,[0]*5]
         
         for j in range(1, n):
-            dp.append([0,0,0,0,0])
-            dp[j][a] = (dp[j-1][e] + dp[j-1][i] + dp[j-1][u]) % mod
+            # dp.append([0,0,0,0,0])
+            dp[1][a] = (dp[0][e] + dp[0][i] + dp[0][u]) % mod
             
-            dp[j][e] = (dp[j-1][a] + dp[j-1][i]) % mod
+            dp[1][e] = (dp[0][a] + dp[0][i]) % mod
             
-            dp[j][i] = (dp[j-1][e] + dp[j-1][o] ) % mod
+            dp[1][i] = (dp[0][e] + dp[0][o] ) % mod
             
-            dp[j][o] = dp[j-1][i] 
+            dp[1][o] = dp[0][i] 
             
-            dp[j][u] = (dp[j-1][o] + dp[j-1][i]) % mod
+            dp[1][u] = (dp[0][o] + dp[0][i]) % mod
             
-        print(dp)
-        return sum(dp[n-1]) % mod
+            dp[0]=dp[1]
+            dp[1]=[0]*5
+            
+            
+        return sum(dp[0]) % mod
