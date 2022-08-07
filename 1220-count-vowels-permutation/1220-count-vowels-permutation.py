@@ -21,7 +21,7 @@ class Solution:
             
             dp[j][i] = (dp[j-1][e] + dp[j-1][o] ) % mod
             
-            dp[j][o] = (dp[j-1][i] ) % mod
+            dp[j][o] = dp[j-1][i] 
             
             dp[j][u] = (dp[j-1][o] + dp[j-1][i]) % mod
             
