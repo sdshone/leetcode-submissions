@@ -19,5 +19,4 @@ class Solution:
             return 1+ max(left, right)
             
         x = height(root)
-        print(x)
         return x!=-1
