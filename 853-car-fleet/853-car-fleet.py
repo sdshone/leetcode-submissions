@@ -9,12 +9,8 @@ class Solution:
         fleet = 1
         for car in cars:
             t = car[0]/car[1]
-            print(t, time)
-
-
             if time <t:
                 fleet+=1
             time = max(time, t)
-            
-        print(fleet)
+
         return fleet
