@@ -20,5 +20,4 @@ class Solution:
                     dfs(child)
         
         dfs(root)
-        print(output)
         return output
