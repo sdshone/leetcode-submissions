@@ -1,15 +1,16 @@
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
         
-        def binary_search(sub_list, idx):
-            list_len = len(sub_list)
-            if not sub_list: return -1
-            mid = list_len // 2
-
-            if sub_list[mid] > target:
-                return binary_search(sub_list[:mid], idx)
-            elif sub_list[mid] < target:
-                return binary_search(sub_list[mid+1:], mid+1+idx)
-            else:
-                return mid+idx
-        return binary_search(nums, 0)
+        
+        i, j = 0, len(nums) - 1
+        
+        while i <= j:
+            mid = (i+j)//2
+            print(i,j,mid)
+            if nums[mid] < target:
+                i = mid+1
+            elif nums[mid] > target:
+                j = mid-1
+            else: # found the match
+                return mid
+        return -1
