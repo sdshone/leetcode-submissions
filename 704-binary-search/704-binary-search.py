@@ -6,7 +6,6 @@ class Solution:
         
         while i <= j:
             mid = (i+j)//2
-            print(i,j,mid)
             if nums[mid] < target:
                 i = mid+1
             elif nums[mid] > target:
