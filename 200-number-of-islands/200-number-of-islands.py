@@ -1,34 +1,37 @@
 class Solution:
     def numIslands(self, grid: List[List[str]]) -> int:
-        
-        if not grid: return 0
-        island_count = 0
+        ROWS, COLS = len(grid), len(grid[0])
         visited = set()
-        rows = len(grid)
-        cols = len(grid[0])
-        
         
         def bfs(r,c):
-            q = collections.deque()
+            if (r,c) in visited:
+                return
+            visited.add(tuple([r,c]))
+
+            q = collections.deque(tuple([r,c]))
             
-            visited.add((r,c))
-            q.append((r,c))
             while q:
-                row, col = q.popleft()
-                drs = [[0,1], [0,-1], [1,0], [-1,0]]
-                for dr, dc in drs:
-                    r, c = row+dr, col+dc
-                    if r in range(rows) and \
-                       c in range(cols) and \
-                       (r,c) not in visited and \
-                       grid[r][c] == '1':
-                        q.append((r,c))
-                        visited.add((r,c))
-                    
+                r= q.popleft()
+                c=q.popleft()
+                if r+1 <ROWS and (r+1, c) not in visited and grid[r+1][c]=='1': 
+                    q.extend([r+1,c])
+                    visited.add(tuple([r+1,c]))
+                if r-1 >=0 and (r-1, c) not in visited and grid[r-1][c]=='1': 
+                    q.extend([r-1,c])
+                    visited.add(tuple([r-1,c]))
+                if c+1 <COLS and (r, c+1) not in visited and grid[r][c+1]=='1': 
+                    q.extend([r,c+1])
+                    visited.add(tuple([r,c+1]))
+                if c-1 >=0 and (r, c-1) not in visited and grid[r][c-1]=='1': 
+                    q.extend([r,c-1])
+                    visited.add(tuple([r,c-1]))
+                
         
-        for r in range(rows):
-            for c in range(cols):
-                if grid[r][c] == '1' and (r,c) not in visited:
+        islands = 0
+        for r in range(ROWS):
+            for c in range(COLS):
+                if (r,c) not in visited and grid[r][c]=='1':
                     bfs(r,c)
-                    island_count += 1
-        return island_count
+                    islands+=1
+
+        return islands
