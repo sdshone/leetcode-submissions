@@ -22,5 +22,4 @@ class Solution:
             return self.cache[i]
         
         dfs(len(cost)-1)
-        print(self.cache)
         return min(self.cache[len(cost)-1], self.cache.get(len(cost)-2, float('inf')))
