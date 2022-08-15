@@ -16,11 +16,12 @@ class Solution:
             level_list = []
             for _ in range(len(q)):
                 node = q.popleft()
-                level_list.append(node.val)
+                
                 if node.left:
                     q.append(node.left)
                 if node.right:
                     q.append(node.right)
+            level_list.append(node.val)
             if level_list:
                 return_list.append(level_list[-1])
         print(return_list)
