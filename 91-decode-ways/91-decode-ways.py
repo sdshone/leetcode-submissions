@@ -3,7 +3,7 @@ class Solution:
         
         mapping = {}
         for i in range(1,27):
-            mapping[i] = chr(ord('A')+i-1)
+            mapping[i] = True
         print(mapping)
 
         count = {len(s):1}
