@@ -1,7 +1,7 @@
 class Solution:
     def uniquePathsWithObstacles(self, obstacleGrid: List[List[int]]) -> int:
         
-        numWays = obstacleGrid.copy()
+        numWays = obstacleGrid
         
         ROWS, COLS = len(numWays), len(numWays[0])
         for i in range(ROWS):
