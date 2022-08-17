@@ -16,6 +16,5 @@ class Solution:
             else:
                 count[s[i]]-=1
                 i+=1
-                
-            print(i,j,longest,maxf)
+
         return longest
