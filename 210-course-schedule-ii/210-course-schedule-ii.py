@@ -4,21 +4,20 @@ class Solution:
         res = []
         visited = set()
         curr_path = set()
-        def dfs(n, curr_path):
-            
-            if n in visited:
-                return
+        def dfs(n):
             if n in curr_path:
-                return -1
+                return False            
+            if n in visited:
+                return True
+
+            curr_path.add(n)
             for c in prereq[n]:
-                curr_path.add(n)
-                x=dfs(c, curr_path)
-                if x==-1:
-                    return x
-            curr_path = set()
+                if not dfs(c):
+                    return False
+            curr_path.remove(n)
             visited.add(n)
             res.append(n)
-            
+            return True
         
         
         
@@ -27,10 +26,9 @@ class Solution:
             prereq[req[0]].add(req[1])
         
         for n in range(numCourses):  
-            x=dfs(n, set())
-            if x==-1:
+            if not dfs(n):
                 return []
         
-        return res if len(res)==numCourses else []
+        return res
             
             
