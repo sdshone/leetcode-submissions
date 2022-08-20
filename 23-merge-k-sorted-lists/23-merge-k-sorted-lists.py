@@ -28,8 +28,9 @@ class Solution:
                 l1 = l1.next
             else:
                 point.next = l2
-                l2 = l1
-                l1 = point.next.next
+                # l2 = l1
+                # l1 = point.next.next
+                l2 = l2.next
             point = point.next
         if l1:
             point.next = l1
