@@ -30,7 +30,7 @@ class Solution:
         def dfs(r, c, node, word):
             
             if (board[r][c] not in node.children 
-            or (r,c) in visited) or W_LEN == len(res):
+            or (r,c) in visited):
                 return
             visited.add((r,c))
             node = node.children[board[r][c]]
