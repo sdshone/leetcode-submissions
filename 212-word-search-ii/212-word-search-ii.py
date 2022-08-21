@@ -24,13 +24,13 @@ class Solution:
         for word in words:
             root.addWord(word)
             
-        
+        W_LEN = len(words)
         res, visited = set(), set()
         
         def dfs(r, c, node, word):
             
             if (board[r][c] not in node.children 
-            or (r,c) in visited):
+            or (r,c) in visited) or W_LEN == len(res):
                 return
             visited.add((r,c))
             node = node.children[board[r][c]]
