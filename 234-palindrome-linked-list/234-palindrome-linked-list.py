@@ -12,7 +12,6 @@ class Solution:
         curr = node
         
         while curr:
-            print(curr.val)
             nxt = curr.next
             curr.next = prev
             prev = curr
