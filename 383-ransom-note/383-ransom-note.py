@@ -4,7 +4,7 @@ class Solution:
         magzineCounter = collections.Counter(magazine)
         ransomCounter = collections.Counter(ransomNote)
         
-        for char in ransomNote:
+        for char in set(ransomNote):
             if ransomCounter[char]>magzineCounter[char]:
                 return False
         return True
