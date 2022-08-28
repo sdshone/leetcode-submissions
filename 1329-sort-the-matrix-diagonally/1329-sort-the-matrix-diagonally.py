@@ -1,7 +1,6 @@
 class Solution:
     def diagonalSort(self, mat: List[List[int]]) -> List[List[int]]:
-        
-        if not mat: return []
+
         diag = defaultdict(list)
         ROWS, COLS = len(mat), len(mat[0])
         for i in range(ROWS):
