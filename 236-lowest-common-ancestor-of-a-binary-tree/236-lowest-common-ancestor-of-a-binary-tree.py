@@ -20,7 +20,7 @@ class Solution:
             
             mid = root == p or root == q
             
-            if left+right+mid >=2:
+            if left+right+mid ==2:
                 ans = root
             
             return mid or left or right
