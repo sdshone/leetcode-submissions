@@ -28,7 +28,5 @@ class Solution:
                 traversal.append(')')
             
         dfs(root)
-        print(traversal)
         traversal = ''.join(traversal)
-        print(traversal)
         return traversal
