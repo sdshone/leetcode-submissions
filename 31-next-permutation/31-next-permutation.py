@@ -9,13 +9,13 @@ class Solution:
         for i in range(len(nums)-2, -1, -1):
             if nums[i] < nums[i+1]:
                 first = i
-                print(i)
+                # print(i)
                 break
         if first != -1:
             for i in range(len(nums)-1, -1, -1):
                 if nums[i] > nums[first]:
                     second = i
-                    print(i)
+                    # print(i)
                     break
             if second != -1:
                 nums[first], nums[second] = nums[second], nums[first]
