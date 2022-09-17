@@ -8,7 +8,7 @@ class Solution:
         
         
         while left > 1:
-            print(total, val, left)
+            # print(total, val, left)
             if left % 2 == 0:
                 left = left // 2
                 val = val * val
