@@ -3,10 +3,10 @@ class Solution:
         
         
         curr_sum = sum([n for n in nums if n %2 == 0])
-        print(curr_sum)
+        # print(curr_sum)
         res = []
         for num, idx in queries:
-            print(num, idx)
+            # print(num, idx)
             if nums[idx]%2 == 0:
                 
                 if num %2 ==0:
