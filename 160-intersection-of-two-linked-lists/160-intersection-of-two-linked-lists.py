@@ -9,7 +9,6 @@ class Solution:
         
         
         nodes = set()
-        count_a, count_b = 0, 0
         while headA or headB:
             # print(headA.val)
             # print(headB in nodes)
