@@ -7,11 +7,10 @@ class Solution:
         N = len(nums)
         while i <  N:
             if nums[i] == val:
-                curr = start = i
+                curr = i
                 while curr < N and nums[curr] == val:
                     curr +=1
                 if curr == N: return i
-                end = curr - i
                 while i < curr and curr < N:
                     nums[i] = nums[curr]
                     i+=1
