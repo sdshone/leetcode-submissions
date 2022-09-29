@@ -10,6 +10,6 @@ class Solution:
             
             res.extend(d[key])
             count += len(d[key])
-            if count > k:
+            if count >= k:
                 break
         return sorted(res[:k])
