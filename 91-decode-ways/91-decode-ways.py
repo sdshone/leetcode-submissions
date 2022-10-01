@@ -4,7 +4,6 @@ class Solution:
         mapping = {}
         for i in range(1,27):
             mapping[i] = True
-        print(mapping)
 
         count = {len(s):1}
         for i in range(len(s)-1,-1,-1):
@@ -14,7 +13,6 @@ class Solution:
                     count[i]+=count[i+2]
             else:
                 count[i]=0
-            print(count, s[i:i+2])
-                
+     
         return count[0]
             
