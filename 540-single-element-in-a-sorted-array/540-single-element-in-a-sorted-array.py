@@ -9,8 +9,7 @@ class Solution:
                 return nums[0]
             
             mid = N//2
-            print(N, mid)
-            print(nums)
+
             if nums[mid] == nums[mid-1]:
                 if mid%2!=0:
                     x=dfs(nums[mid+1:])
