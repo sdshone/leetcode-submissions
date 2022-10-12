@@ -11,7 +11,7 @@ class Solution:
         s = s[char_s:char_e+1]
         
         words = []
-        ss,e = 0,0
+        ss= 0
         i=0
         while i <(len(s)):
             if i==0 or s[i-1]==' ':
