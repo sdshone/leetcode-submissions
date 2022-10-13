@@ -1,8 +1,8 @@
 class Solution:
     def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
         
-        
-        count = len(matrix) * len(matrix[0])
+        M, N = len(matrix), len(matrix[0])
+        count = M* N
         res = []
         i = j = 0
         d = [0,1]
@@ -14,7 +14,7 @@ class Solution:
             
             ni, nj = i+d[0], j+d[1]
             
-            if 0<=ni<len(matrix) and 0<=nj<len(matrix[0]) and matrix[ni][nj]!=120:
+            if 0<=ni<M and 0<=nj<N and matrix[ni][nj]!=120:
                 i,j = ni,nj
             else:
                 d[0], d[1] = d[1], -d[0]
