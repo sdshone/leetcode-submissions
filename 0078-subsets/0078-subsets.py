@@ -6,12 +6,8 @@ class Solution:
         def dfs(i, arr):
             
             if i >=N:
-                
-                for r in res:
-                    if r==arr:
-                        break
-                else:
-                    res.append(arr)
+
+                res.append(arr)
                 return
             
             take = dfs(i+1, arr+[nums[i]])
