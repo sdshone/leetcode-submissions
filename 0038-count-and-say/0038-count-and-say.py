@@ -1,8 +1,6 @@
 class Solution:
     def countAndSay(self, n: int) -> str:
         s='1'
-        def countsay(s):
-            pass
         for i in range(n-1):
             res=''
             idx=0
