@@ -12,7 +12,6 @@ class Solution:
                     count+=1
         
                 res+=f'{count}{char}'
-                count=0
             return res
         for i in range(n-1):
             s = countsay(s)
