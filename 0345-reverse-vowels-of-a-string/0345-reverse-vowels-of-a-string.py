@@ -7,8 +7,9 @@ class Solution:
         for i in range(len(s)):
             if s[i] in vowels:
                 mapping[i]=s[i]
-        rev_idx = list(mapping.keys())[::-1]
+        
         idxs = list(mapping.keys())
+        rev_idx = idxs[::-1]
         for idx in range(len(rev_idx)):
             s[idxs[idx]] = mapping[rev_idx[idx]]
 
