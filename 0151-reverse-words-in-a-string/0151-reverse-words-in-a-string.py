@@ -26,8 +26,7 @@ class Solution:
             else: i+=1
          
         words.append(s[ss:i])
-        
-        # print(s,words)
+
         res = ''
         for w in words[::-1]:
             res +=w+' '
