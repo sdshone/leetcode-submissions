@@ -3,8 +3,7 @@ class Solution:
         
         
         def dfs(i, r, c, sol):
-            # print(sol)
-            # print(i, r, c)
+
             if i == len(word):
                 return True
             if r<0 or r >= len(board) or c<0 or c >= len(board[0]) or (r,c) in sol:
@@ -24,6 +23,6 @@ class Solution:
         
         for r in range(len(board)):
             for c in range(len(board[0])):
-                if dfs(0, r, c, set()):
+                if board[r][c] == word[0] and dfs(0, r, c, set()):
                     return True
         return False
