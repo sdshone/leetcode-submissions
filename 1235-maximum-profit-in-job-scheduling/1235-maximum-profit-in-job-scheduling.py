@@ -17,7 +17,7 @@ class Solution:
                     r = m
             # l = l if l< len(nums) else len(nums)-1
             # print(l,r, target)
-            if l >= len(nums): return None
+            # if l >= len(nums): return None
             # return nums[l-1][0] 
             return l
         
@@ -26,7 +26,7 @@ class Solution:
             if i >= len(jobs) : return 0
             k = binarySearch(jobs, jobs[i][1])
             # k = bisect_left(jobs, jobs[i][1], key = lambda x: x[0])
-            x = dfs(k) if k is not None else 0
-            return max(dfs(i+1), jobs[i][2] + x)
+            # x = dfs(k) if k is not None else 0
+            return max(dfs(i+1), jobs[i][2] + dfs(k))
     
         return dfs(0)
